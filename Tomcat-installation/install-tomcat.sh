@@ -29,27 +29,20 @@ find / -name server.xml context.xml
 vim /opt/tomcat9/conf/server.xml
 
 vi /opt/tomcat9/webapps/manager/META-INF/context.xml
-#add comment (<!--  -->) just as below
+#add comment tags (<!--  -->) just as below
  <!--
   <Valve className="org.apache.catalina.valves.RemoteAddrValve"
           allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
           -->
 
 vi /opt/tomcat9/conf/tomcat-users.xml  # to add user
-# edit usernames, password and roles below and paste just before the last closing tag 
-<user username="role1" password="<must-be-changed>" roles="role1"/>
+# copy and edit usernames, password and roles below and paste just before the last closing tag 
+<user username="olushola" password="<must-be-changed>" roles="role1"/>
 
 
-	<user username="landmark" password="admin" roles="manager-gui,admin-gui,manager-script"/>
 	
-
-/opt/tomcat9/conf/context.xml
-
- vi /opt/tomcat9/webapps/manager/META-INF/context.xml
   
-  vi /opt/tomcat9/conf/tomcat-user.xml  # to add user
   
 	
-	username YourName password=PassWord   roles=manager-gui
 	
 	
