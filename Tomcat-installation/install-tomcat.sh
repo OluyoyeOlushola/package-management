@@ -36,7 +36,7 @@ vi /opt/tomcat9/webapps/manager/META-INF/context.xml
           -->
 
 vi /opt/tomcat9/conf/tomcat-users.xml  # to add user
-# copy and edit usernames, password and roles below and paste just before the last closing tag 
+# copy and edit usernames, password and roles as required for user and paste just before the last closing tag.
 <user username="olushola" password="<must-be-changed>" roles="role1"/>
 
 
