@@ -39,7 +39,7 @@ sudo service sshd restart
 ``` sh
 cd /opt
 sudo yum -y install unzip wget git
-sudo yum install  java-11-openjdk-devel
+sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 ```
 ### 4. Download and extract the SonarqQube Server software.
 ```sh
