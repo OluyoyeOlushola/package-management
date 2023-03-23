@@ -1,1 +1,64 @@
+Nginx - HTTP Server
+Install Nginx in Redhat. T2 Micro
+ open port 80 
+ #Must be ran as root user
+ sudo su root
 
+dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest- 8.noarch.rpm
+
+sudo yum install nginx
+
+#Enable the nginx service
+sudo systemctl enable nginx
+
+#Start the nginx service
+sudo systemctl start nginx
+
+#Check the nginx service status
+sudo systemctl status nginx
+
+Rename/backup default nginx conf file
+sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bkp
+
+Create nginx conf file in default path and define proxy(reverse proxy) rules. 
+sudo vi /etc/nginx/nginx.conf Add the below lines, Edit IP addresses of all the tomcat servers in your environment according
+
+                events{
+                worker_connections 1024;
+                }
+                http { keepalive_timeout 5;
+                upstream tomcatServers {
+                  keepalive 50;
+                  server 172.31.16.79:8080;
+                  server 172.31.28.14:8080;
+                  server 172.31.84.245:8080;
+
+                }
+                server {
+                   listen 80;
+                location / {
+                        proxy_set_header  X-Real-lP $remote_addr;
+                        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+                        proxy_set_header  X-Forwarded-Proto $scheme;
+                        proxy_set_header        Host $host;
+                        proxy_pass http://tomcatServers;
+                }
+                }
+                }
+
+
+Validate the nginx.conf by using below command
+sudo nginx -t
+
+Reload configurations
+sudo nginx -s reload
+
+Restart nginx Service to Reflect the proxy rules.
+sudo systemctl restart nginx
+
+Note: If you get 502 Bad Gateway on your browser,
+
+Security-Enhanced Linux (SELinux) is a Linux kernel security module for Linux systems that allows administrators to have more control over who can access the system. If SELinux enabled, which blocked Nginx from making outbound connections. If SELinux is on and you're experiencing this, you might try setting httpd_can_network_connect to true, and then restarting nginx:
+
+#run below command, and make sure tomcat servers are running on web. Meaning servers will be routed at backend to tomcat servers
+setsebool -P httpd_can_network_connect true
