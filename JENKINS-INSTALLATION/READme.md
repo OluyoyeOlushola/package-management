@@ -49,6 +49,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 #confirm Jenkins is a user.  (jenkins) is automatically created during Jenkins installation.
  id jenkins or   grep jenkins /etc/passwd or  tail -5 /etc/passwd
 
+# change interpreter and switch user
 #change interpreter from false to bash
 sudo vi /etc/passwd    
 
