@@ -44,7 +44,15 @@ public-ip:8080
 curl ifconfig.co 
 ```
 # get jenkins initial admin password
-```sh
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-```
+
+#confirm Jenkins is a user.  (jenkins) is automatically created during Jenkins installation.
+ id jenkins or   grep jenkins /etc/passwd or  tail -5 /etc/passwd
+
+#change interpreter from false to bash
+sudo vi /etc/passwd    
+
+#switch user
+sudo su - jenkins
+
 
