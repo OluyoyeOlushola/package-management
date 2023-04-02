@@ -8,6 +8,12 @@ Integrate Maven, SonarQube, Nexus (follow process in free style project) and mak
 	Email(Extended email) add as much as requires generate pipeline script copy and paste script on pipeline
 
 
+creating from existing Jenkins file
+Creat a new item/job(enter name)Pipeline Pipeline (pipeline script from SCM)SCM(Git)Repo URL(enter the github url of project)Credentials Script path(check Jenkinsfile name on SCM)save
+
+
+
+
 Pipeline Script sample
 node{
   def mavenHome = tool name: 'maven3.9.1'
