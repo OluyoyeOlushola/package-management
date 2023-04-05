@@ -17,10 +17,13 @@ pipeline{
     }
     stage('2TestBuild'){
       steps{
-        sh "echo 'running JUnit-test-cases' "
-        sh "echo 'testing must passed to create artifacts ' "
+        sh "echo 'clean and install artifacts/packages' "
         sh "mvn clean install -DskipTests" 
-      }
+        }
+        post {
+        success{
+        echo "Now Archiving it...."
+        }
     }
    stage('3CodeQualityAnalysis') {
     steps{
