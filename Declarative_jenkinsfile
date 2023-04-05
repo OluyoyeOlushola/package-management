@@ -24,6 +24,7 @@ pipeline{
         success{
         echo "Now Archiving it...."
         }
+       }
     }
    stage('3CodeQualityAnalysis') {
     steps{
