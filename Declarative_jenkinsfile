@@ -42,28 +42,21 @@ pipeline{
    }
   stage('5deploy') {
     steps{
-      deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://52.201.174.11:8080/manager/html')], contextPath: null, war: 'target/*.war'
+      deploy adapters: [tomcat9(credentialsId: 'TomcatServer', path: '', url: 'http://3.90.85.61:8080/')], contextPath: null, war: 'target/*.war'
         }
    }
 
   }
   post{ 
     always{
-emailext body: '''Great job team.
-
-LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build Success', to: 'mylandmarktech@gmail.com'
-
+emailext body: 'Weldone Done  Team', recipientProviders: [contributor(), developers()], subject: 'Build Success', to: 'idrisoluyoye2000@yahoo.com'
     }
     success{
-emailext body: '''Great job team.
-
-LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build Success', to: 'mylandmarktech@gmail.com'
+emailext body: 'Weldone Done  Team', recipientProviders: [contributor(), developers()], subject: 'Build Success', to: 'idrisoluyoye2000@yahoo.com'
 
     }
     failure{
-emailext body: '''Please review this job.
-
-LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build failed', to: 'mylandmarktech@gmail.com'
+emailext body: 'Please kindly review this job', recipientProviders: [contributor(), developers()], subject: 'Build failed', to: 'idrisoluyoye2000@yahoo.com'
 }
 }
 }
