@@ -3,7 +3,7 @@ pipeline{
     label 'master'
   } 
   tools {
-    maven 'maven3.9.1'
+    maven 'maven'
   }
   //options{}
   //triggers{}
