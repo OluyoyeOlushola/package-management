@@ -62,5 +62,3 @@ emailext body: '''Please review this job.
 LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build failed', to: 'mylandmarktech@gmail.com'
 
     }
-
-}
