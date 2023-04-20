@@ -11,7 +11,7 @@ pipeline{
     stage('1Clone'){
       steps{    
         sh "echo 'cloning the latest application version' "
-        git branch: "master", url: "https://github.com/OluyoyeOlushola/maven-standalone-application"
+        git branch: "master", url: "https://github.com/OluyoyeOlushola/maven-web-application-1"
         sh "echo 'latest application version available for testing and build' "
       }
     }
