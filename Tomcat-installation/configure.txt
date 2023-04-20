@@ -1,19 +1,19 @@
 #2. Start of tomcat configuration 
 
 #Tomcat server configuration:
-find / -name server.xml context.xml
-vim /opt/tomcat9/conf/server.xml
-vi /opt/tomcat9/webapps/manager/META-INF/context.xml
-vi /opt/tomcat9/conf/tomcat-user.xml  # to add user
 
-	<user username="landmark" password="admin" roles="manager-gui,admin-gui"/>
+Enable external access
+vi /opt/tomcat9/webapps/manager/META-INF/context.xml        
+put a comment in <valve className just as below
+<!-- 
+<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+	 -->
+
+
+vi /opt/tomcat9/conf/tomcat-users.xml  # to add user
+ edit and paste below sample before the closing tag of </tomcat-users>
+	<user username="username" password="password" roles="manager-gui,admin-gui"/>
+
 	
 
-/opt/tomcat9/conf/context.xml
-
- vi /opt/tomcat9/webapps/manager/META-INF/context.xml
-  
-  vi /opt/tomcat9/conf/tomcat-user.xml  # to add user
-  
-	
-	username YourName password=PassWord   roles=manager-gui
