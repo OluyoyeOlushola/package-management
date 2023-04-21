@@ -46,16 +46,4 @@ pipeline{
         }
    }
   }
-  post{ 
-    always{
-emailext body: 'Weldone Done  Team', recipientProviders: [contributor(), developers()], subject: 'Build Success', to: 'idrisoluyoye2000@yahoo.com'
-    }
-    success{
-emailext body: 'Weldone Done  Team', recipientProviders: [contributor(), developers()], subject: 'Build Success', to: 'idrisoluyoye2000@yahoo.com'
-
-    }
-    failure{
-emailext body: 'Please kindly review this job', recipientProviders: [contributor(), developers()], subject: 'Build failed', to: 'idrisoluyoye2000@yahoo.com'
-}
-}
-}
+  
