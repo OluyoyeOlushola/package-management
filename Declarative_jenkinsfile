@@ -46,4 +46,19 @@ pipeline{
         }
    }
   }
- } 
+ post{ 
+    always{
+emailext body: '''Great job team.
+LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build Success', to: 'mylandmarktech@gmail.com'
+    }
+    success{
+emailext body: '''Great job team.
+LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build Success', to: 'mylandmarktech@gmail.com'
+    }
+    failure{
+emailext body: '''Please review this job.
+LandmarkTech ''', recipientProviders: [buildUser(), developers()], subject: 'Build failed', to: 'mylandmarktech@gmail.com'
+    }
+}
+}
+}
