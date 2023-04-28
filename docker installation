@@ -18,3 +18,4 @@ sudo service docker start
 sudo hostnamectl set-hostname docker
 sudo usermod -aG docker ec2-user
 sudo su - ec2-user
+sudo yum install maven -y
