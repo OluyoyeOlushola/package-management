@@ -8,6 +8,9 @@ sudo docker info
 sudo hostnamectl set-hostname docker 
 sudo usermod -aG docker ubuntu
 sudo su - ubuntu    
+sudo apt install maven -y
+sudo apt install git -y
+
 
 
 Installation on Amazon Linux
@@ -19,3 +22,4 @@ sudo hostnamectl set-hostname docker
 sudo usermod -aG docker ec2-user
 sudo su - ec2-user
 sudo yum install maven -y
+sudo yum install git -y
