@@ -15,5 +15,6 @@ Installation on Amazon Linux
 sudo yum update -y    
 sudo yum install docker -y
 sudo service docker start
+sudo hostnamectl set-hostname docker
 sudo usermod -aG docker ec2-user
 sudo su - ec2-user
