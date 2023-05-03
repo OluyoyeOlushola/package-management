@@ -1,0 +1,8 @@
+sudo apt install default-jre              # version 2:1.11-72
+sudo apt install openjdk-16-jre-headless  # version 16.0.1+9-1~20.04
+sudo apt install openjdk-17-jre-headless  # version 17.0.6+10-0ubuntu1~20.04.1
+sudo apt install openjdk-8-jre-headless   # version 8u362-ga-0ubuntu1~20.04.1
+sudo apt install openjdk-13-jre-headless  # version 13.0.7+5-0ubuntu1~20.04
+
+
+sudo update-alternatives --config java  # to switch between install java  version
